@@ -1,0 +1,18 @@
+PODS:
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core
+  - MagicalRecord/Core (2.2)
+  - PXAlertView (0.1.1)
+  - XLForm (2.1.0)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - PXAlertView
+  - XLForm
+
+SPEC CHECKSUMS:
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  PXAlertView: 3b390ec26b4ce68cffb650ebabf2cb5011026e14
+  XLForm: 7d6855fe88df37b44ea00da80cc0cf3a945cfb1b
+
+COCOAPODS: 0.34.2

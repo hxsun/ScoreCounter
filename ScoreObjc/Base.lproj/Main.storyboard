@@ -1,25 +1,181 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7cb-dU-Cps">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--当局战况-->
+        <scene sceneID="MTF-49-u5G">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                <tableViewController id="2n0-5T-Jpy" customClass="MainViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="6Rv-QJ-JmV">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="playerCell" textLabel="5Cl-n6-Z7z" detailTextLabel="SFe-dO-1vq" rowHeight="60" style="IBUITableViewCellStyleValue1" id="X2y-wa-fP9">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X2y-wa-fP9" id="DAC-IM-RLJ">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5Cl-n6-Z7z">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SFe-dO-1vq">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2n0-5T-Jpy" id="WvM-4G-ogL"/>
+                            <outlet property="delegate" destination="2n0-5T-Jpy" id="CqY-Ud-66m"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="当局战况" id="W9n-Sq-rZY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="fmV-f4-eX9">
+                            <connections>
+                                <action selector="clickToCreateNewGame:" destination="2n0-5T-Jpy" id="K5I-EZ-bcS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PIU-jN-fuq">
+                            <connections>
+                                <segue destination="eyA-jj-stb" kind="presentation" id="2Yc-Fs-Ysr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="F1X-yc-Z0v" kind="presentation" identifier="newGameSegue" id="UkL-Gz-0AE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="foj-Rf-k4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="655.5" y="613.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="52f-1x-QFz">
+            <objects>
+                <navigationController id="eyA-jj-stb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GsN-nc-7MK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YGo-i0-4ZN" kind="relationship" relationship="rootViewController" id="XOh-xs-eUE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKF-Fo-fIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1488" y="613.5"/>
+        </scene>
+        <!--Round Record View Controller-->
+        <scene sceneID="Ujn-p2-P3w">
+            <objects>
+                <viewController id="YGo-i0-4ZN" customClass="RoundRecordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7ob-wm-QcQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Tn-Jw-uFr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4CK-z0-d8r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YIf-pk-vCh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="l4t-cj-C3R">
+                            <connections>
+                                <segue destination="PuJ-qF-dsc" kind="unwind" unwindAction="unwindFromRefreshModalViewController:" id="3fu-5f-mHf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Pnw-Pl-FN8">
+                            <connections>
+                                <action selector="saveRoundData:" destination="YGo-i0-4ZN" id="zww-hw-Jp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlT-Q1-aO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PuJ-qF-dsc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2236.5" y="613.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TYg-HJ-SGs">
+            <objects>
+                <navigationController id="7cb-dU-Cps" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wbl-o9-AXS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2n0-5T-Jpy" kind="relationship" relationship="rootViewController" id="MXX-MY-CkV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nf-YI-5hV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="613.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RpJ-wU-3HY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F1X-yc-Z0v" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="11Q-21-SXK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ZBS-XM-X13" kind="relationship" relationship="rootViewController" id="yL5-IJ-Dn6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSH-Ii-Uhf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="655.5" y="1303.5"/>
+        </scene>
+        <!--New Game View Controller-->
+        <scene sceneID="tt1-4C-LSZ">
+            <objects>
+                <viewController id="ZBS-XM-X13" customClass="NewGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lrk-TF-SiV"/>
+                        <viewControllerLayoutGuide type="bottom" id="GPV-r3-WUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nBE-7i-m70">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="22E-ac-SrE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="0au-e0-fn9">
+                            <connections>
+                                <segue destination="Od4-VY-ukF" kind="unwind" unwindAction="unwindFromRefreshModalViewController:" id="b6A-41-LfL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="01f-n6-CK2">
+                            <connections>
+                                <action selector="didSaveData:" destination="ZBS-XM-X13" id="xiK-Hc-IaJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BMf-7s-MiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Od4-VY-ukF" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1381.5" y="1303.5"/>
         </scene>
     </scenes>
 </document>
